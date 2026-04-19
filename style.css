@@ -1,0 +1,203 @@
+:root {
+    --bg-color: #f4f4f9;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --accent-color: #3a86ff;
+    --accent-hover: #266cf0;
+    --error-bg: #ffebee;
+    --error-text: #c62828;
+    --border-color: #e0e0e0;
+    --font-family: 'Inter', sans-serif;
+    --border-radius: 8px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-section {
+    margin-bottom: 1.5rem;
+}
+
+#search-form {
+    display: flex;
+    gap: 0.5rem;
+    position: relative;
+    /* Position relative for the absolute dropdown */
+}
+
+#city-input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    outline: none;
+    font-family: var(--font-family);
+    transition: border-color 0.2s ease;
+}
+
+#city-input:focus {
+    border-color: var(--accent-color);
+}
+
+/* Autocomplete styles */
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--card-bg);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    max-height: 250px;
+    overflow-y: auto;
+    box-shadow: var(--shadow);
+    width: calc(100% - 100px);
+    /* Account for search button width */
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.autocomplete-items div:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-items div:hover {
+    background-color: #e9ecef;
+}
+
+.autocomplete-items .state-country {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-left: 5px;
+}
+
+#search-btn {
+    padding: 0.75rem 1.2rem;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+#search-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+#search-btn:disabled {
+    background-color: var(--border-color);
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.weather-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.weather-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.weather-header h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
+}
+
+.weather-desc {
+    color: var(--text-muted);
+    text-transform: capitalize;
+    font-size: 0.95rem;
+}
+
+.weather-icon {
+    width: 64px;
+    height: 64px;
+}
+
+.weather-main {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.temp {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.feels-like {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.detail-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    font-size: 1.1rem;
+    font-weight: 500;
+}

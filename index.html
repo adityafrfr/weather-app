@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Weather App</h1>
+        </header>
+
+        <section class="search-section">
+            <form id="search-form">
+                <input type="text" id="city-input" placeholder="Enter city name..." aria-label="Search for a city"
+                    autocomplete="off" required>
+                <div id="autocomplete-list" class="autocomplete-items hidden"></div>
+                <button type="submit" id="search-btn">Search</button>
+            </form>
+
+            <div class="recent-searches">
+                <span class="recent-label">Recent:</span>
+                <div id="recent-chips" class="chips-container">
+                </div>
+            </div>
+        </section>
+
+        <div id="error-container" class="error-container hidden">
+            <p id="error-message"></p>
+        </div>
+
+        <div id="loading-container" class="loading-container hidden">
+            <p>Loading weather data...</p>
+        </div>
+
+        <section id="weather-card" class="weather-card hidden">
+            <div class="weather-header">
+                <div>
+                    <h2 id="city-name">--</h2>
+                    <p id="weather-desc" class="weather-desc">--</p>
+                </div>
+                <img id="weather-icon" src="" alt="Weather Icon" class="weather-icon">
+            </div>
+
+            <div class="weather-main">
+                <p id="temperature" class="temp">--°C</p>
+                <p id="feels-like" class="feels-like">Feels like --°C</p>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="detail-label">Humidity</span>
+                    <span id="humidity" class="detail-value">--%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Wind Speed</span>
+                    <span id="wind-speed" class="detail-value">-- m/s</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
